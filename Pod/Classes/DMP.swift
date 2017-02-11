@@ -26,7 +26,6 @@
 
 
 import Foundation
-import AdSupport
 import Alamofire
 
 /**
@@ -51,7 +50,7 @@ open class DMP:NSObject{
     */
     open static var advertisingId: String?{
         if trackingEnabled{
-            return ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            return nil
         }else{
             return nil
         }
@@ -78,7 +77,7 @@ open class DMP:NSObject{
     Tracking is enabled only if advertising id is enabled on the user's device
     */
     open static var trackingEnabled: Bool{
-        return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+        return false;
     }
     
     /**
